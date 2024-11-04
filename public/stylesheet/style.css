@@ -1,0 +1,20 @@
+#preview {
+    display: none;
+    width: 100px;
+    height: auto;
+    margin-top: 10px;
+}
+
+#imagem {
+    display: none;
+}
+
+.escolher-imagem {
+    padding: 10px;
+    background-color: #646464cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
