@@ -1,20 +1,394 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* PREVIEW IMAGEM DO PRODUTO */
+
 #preview {
     display: none;
-    width: 100px;
+    width: 150px;
     height: auto;
-    margin-top: 10px;
+}
+
+.imagem-produtos {
+    margin: 0 auto;
 }
 
 #imagem {
     display: none;
 }
 
+/* CSS INDEX */
+
+
+#index {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.cadastro-produtos {
+    text-align: center;
+}
+
+#formulario {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+
+    width: 275px;
+}
+
+#formulario input, label, img {
+    padding: 5px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+
+    border-radius: 20px;
+}
+
+#formulario input, label {
+    border: 1px solid black;
+}
+
+#formulario label {
+    border-radius: 30px;
+}
+
 .escolher-imagem {
-    padding: 10px;
-    background-color: #646464cc;
+    background-color: #2b5586bb;
     color: white;
+
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+
     margin-top: 10px;
+    padding: 10px;
+
+    cursor: pointer;
+    text-align: center;
+}
+
+.escolher-imagem:hover {
+    background-color: #2b5586;
+}
+
+/*CABEÇALHO/HEADER STORE*/
+
+header {
+    background-color: #ffffff;
+
+    height: 90px;
+
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    left: 0;
+    width: 200px;
+    height: auto;
+
+    margin-left: 10px;
+    margin-top: -98px;
+}
+
+.texto-busca {
+
+    text-align: left;
+    flex: 1;
+
+    margin-top: 33px;
+    max-width: 300px;
+    height: 30px;
+    width: 300px;
+
+    border-radius: 20px;
+    padding-left: 10px;
+
+    border: 1px solid rgba(0, 0, 0, 0.664);
+
+}
+
+#sessao {
+    position: absolute;
+    display: flex;
+
+    right: 40px;
+    margin-top: 10px;
+
+    gap: 15px;
+}
+
+.tipagem  {
+    text-decoration: none;
+
+    padding: 10px;
+    margin-top: 20px;
+    color: black;
+}
+
+.tipagem:hover {
+    color: #2b5586;
+}
+
+/* CSS LOJA */
+
+#mercado-loja {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(255, 255, 255);
+}
+
+#lista-produtos {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    margin-left: 180px;
+}
+
+#lista-produtos ul {
+    border: 1px solid black;
+}
+
+#lista-produtos ul {
+    display: inline-block;
+
+    width: 15%;
+    margin: 10px 1%;
+    padding: 10px;
+
+    background-color: rgb(241, 241, 241);
+    border: 1px solid rgb(219, 219, 219);
+
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+#lista-produtos ul:nth-last-child(-n+3):first-child {
+    left: 0;
+}
+
+.imagem-mercado {
+    width: 100px;
+    height: auto;
+
+}
+
+.descricao {
+    font-size: 12px;
+}
+
+.botao-compra {
+    background-color: #8099a79c;
+
+    border: none;
+    border-radius: 5px;
+
+    width: 120px;
+    height: 30px;
+
+    cursor: pointer;
+}
+
+.botao-compra:hover {
+    background-color: #417cc0b6;
+}
+
+/* CSS CARRINHO */
+
+/* CSS CARRINHO */
+
+#meu-carrinho {
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.5s ease, visibility 0s 0.5s; /* Transição para opacidade e visibilidade */
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 220px;
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    background-color: #f9f9f9be;
+    border-radius: 20px;
+    visibility: hidden; /* Torna invisível inicialmente */
+}
+
+#meu-carrinho.mostrar {
+    opacity: 1; /* Torna visível */
+    visibility: visible; /* Torna visível */
+    transition: opacity 0.5s ease, visibility 0s; /* Transição para opacidade */
+}
+
+.title-carrinho {
+    margin-bottom: 10px;
+}
+
+#carrinho-compras {
+    list-style: none;
+    padding: 0;
+}
+
+#carrinho-compras li{
+    margin: 5px 0;
+}
+
+#total {
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+#botao-finalizar {
+    padding: 7px;
+    width: 100px;
+
+    background-color: #8099a79c;
+
+    border: none;
+    border-radius: 20px;
+}
+
+#botao-finalizar:hover {
+    background-color: #417cc0b6;
+}
+
+#botao-limpar {
+    border-radius: 20px;
+    border: none;
+    background-color: rgba(255, 0, 0, 0.486);
+
+    padding: 7px;
+    width: 50px;
+
+    font-weight: bolder;
+}
+
+#botao-limpar:hover {
+    background-color: rgba(255, 0, 0, 0.651);
+}
+
+/* Adiciona um contêiner para os botões */
+#meu-carrinho .botoes-carrinho {
+    display: flex; /* Usa o Flexbox */
+    gap: 10px; /* Espaçamento entre os botões */
+    margin-top: 20px; /* Espaço acima dos botões */
+}
+
+/* Estiliza os botões */
+#botao-finalizar, #botao-limpar {
+    padding: 7px;
+    width: 100px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#botao-finalizar {
+    background-color: #8099a79c;
+}
+
+#botao-finalizar:hover {
+    background-color: #417cc0b6;
+}
+
+#botao-limpar {
+    background-color: rgba(255, 0, 0, 0.486);
+}
+
+#botao-limpar:hover {
+    background-color: rgba(255, 0, 0, 0.651);
+}
+
+
+/* Animação de fade-in para quando um item é adicionado */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Aplica a animação de fade-in ao item adicionado */
+.item-adicionado {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#alerta-custom {
+    position: fixed;
+    display: flex;
+
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+    
+    background: rgba(0, 0, 0, 0.5);
+    
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.caixa-alerta {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+#alerta-ok {
+    margin-top: 10px;
+    padding: 10px 20px;
+
+    background-color: #007bff;
+    color: white;
+
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#alerta-ok:hover {
+    background-color: #0056b3;
+}
+
+#alerta-quantidade {
+    position: fixed;
+    display: flex;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1001;
+}
+
+.quantidade-container {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
 }

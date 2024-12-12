@@ -6,20 +6,21 @@
     <link rel="stylesheet" href="/stylesheet/style.css">
     <title>Cadastrar novos produtos</title>
 </head>
-<body>
-    <h2>Cadastre novos produtos aqui!</h2>
+<body id="index">
+    <h2 class="cadastro-produtos">Cadastre novos produtos aqui!</h2>
 
-    <form method="post" enctype="multipart/form-data">
-        <input placeholder="Produto" type="text" name="produto" required>
-        <input placeholder="Estoque" type="text" name="estoque" required>
-        <input placeholder="Valor em R$" type="number" step="0.01" name="preco" required>
-        <input type="file" name="imagem" accept="image/*" required id="imagem">
+    <form id="formulario" method="post" enctype="multipart/form-data">
+        <input placeholder="Produto:" type="text" name="produto" required>
+        <input placeholder="Descrição:" type="text" name="descricao" required>
+        <input placeholder="Estoque:" type="text" name="estoque" required>
+        <input placeholder="Valor em R$:" type="number" step="0.01" name="preco" required>
+        <input type="file" name="imagem" accept="image/*" id="imagem" required>
 
         <label for="imagem" class="escolher-imagem">Imagem do Produto</label>
 
-        <img id="preview" src="" alt="Pré-visualização da imagem">
+        <img class="imagem-produtos" id="preview" src="" alt="Pré-visualização da imagem">
 
-        <input type="submit">
+        <input type="submit">   
     </form>
 
 <script src="/stylesheet/script.js"></script>

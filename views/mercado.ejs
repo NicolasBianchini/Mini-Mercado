@@ -3,21 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheet/style.css">
     <title>Mini Mercado</title>
 </head>
-<body>
+<body id="mercado-loja">
     <header>
-        <h2>Seja Bem-Vindo ao Mini-Mercado Online</h2>
+        <div class="header">
+            <a href="http://localhost:3001/mercado" id="link-inicial">
+                <img class="logo" src="/stylesheet/images/rb_2148462314.png" >
+            </a>
+            <form action="/buscar" method="get">
+                <input placeholder="Aqui você encontra de tudo!" class="texto-busca" type="text" id="busca-produtos" name="term">
+            </form>
+        </div>
     </header>
 
-    <ul>
+    <ul id="lista-produtos">
         <% lista.forEach(function(user){ %>
-            <li id="lista">
+            <ul class="produto" id="lista">
                 <img class="iamgem-mercado" src="<%= user.imagem %>" style="width:100px; height:auto;"> <br>
-                <%= user.produto %> <br>
-                Valor R$<%= user.preco %>
-            </li>
-            <% }) %>
+                <p class="descricao"><%= user.descricao %></p> <br>
+                <button class="botao-compra" onclick="adicionarCarrinho('<%= user.produto %>', '<%= user.preco %>', '<%= user.estoque %>')">
+                    R$<%= user.preco %>
+                </button>
+
+                <% /*
+                    mexer nos alert de adicionar produto e de venda realizada.
+                    adicionar nome para os produtos
+                */ %>
+            </ul>
+        <% }) %>
     </ul>
+
+    <div id="meu-carrinho">
+        <h2 class="title-carrinho">Seus itens</h2>
+        <ul id="carrinho-compras"></ul>
+        <p id="total">Total: R$<span id="total-valor">0.00</span></p>
+    
+        <!-- Contêiner para os botões -->
+        <div class="botoes-carrinho">
+            <button id="botao-finalizar" onclick="finalizarCompra()">Finalizar</button>
+            <button id="botao-limpar" onclick="limparCarrinho()">X</button>
+        </div>
+    </div>
+
+    <div id="alerta-quantidade" class="hidden">
+        <div class="quantidade-container">
+            <p id="mensagem-quantidade">Digite a quantidade desejada\;</p>
+            <input type="number" id="input-quantidade" min="1">
+            <button id="quantidade-ok">Ok</button>
+            <button id="quantidade-cancelar">Cancelar</button>
+        </div>
+    </div>
+    
+    <div id="alerta-custom" class="hidden">
+        <div class="caixa-alerta">
+            <p id="mensagem">Mensagem de alerta</p>
+            <button id="alerta-ok">OK</button>
+        </div>
+    </div>
+
+<script src="/stylesheet/script.js" defer></script>
 </body>
 </html>
