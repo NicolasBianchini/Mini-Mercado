@@ -1,1 +1,1 @@
-Dependencias usadas: express, ejs, body-parser, nodemon e mysql
+Dependencias usadas: express, ejs, body-parser, nodemon, mysql e multer
